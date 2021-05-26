@@ -58,6 +58,7 @@ class TrainService():
         mp_encoder = MultipartEncoder(
             fields={
                 'device_id': Vehicle.get_wlan_mac_address(),
+                'hostname': Vehicle.get_hostname(),
                 'tub_archive_file': ('file.tar.gz', open(filename, 'rb'), 'application/gzip'),
             }
         )
